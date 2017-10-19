@@ -1,0 +1,20 @@
+/* pages/components/view.wxss */
+.bc_green{
+  background: green;
+}
+.bc_red{
+  background: red;
+}
+.bc_blue{
+  background:blue;
+}
+.flex-item{
+  width: 100px;
+  height: 100px;
+  color: #fff;
+  text-align: center;
+  line-height: 100px;
+}
+.flex-wrp{
+  display: flex;
+}
