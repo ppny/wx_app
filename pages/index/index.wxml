@@ -1,11 +1,21 @@
-<!--index.wxml-->
-<view class="container">
-  <view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
-  <navigator url="../components/view" hover-class="navigator-hover">跳转到view页面</navigator>
-</view>
+
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <swiper-item>
+    <ul class="menu">
+      <li wx:for="{{menu1}}">
+        <image src="" width="30" height="30"></image>
+        <span>{{item.name}}</span>
+      </li>
+    </ul>
+  </swiper-item>
+  <swiper-item>
+    <ul class="menu">
+      <li wx:for="{{menu2}}">
+        <image src="" width="30" height="30"></image>
+        <span>{{item.name}}</span>
+      </li>
+
+    </ul>
+  </swiper-item>
+</swiper>

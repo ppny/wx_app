@@ -1,33 +1,28 @@
-//index.js
-//引入公共模块
-var common = require('../common.js')
-//获取应用实例
-var app = getApp()
+var app = getApp();
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {
-    }
+    menu1:[
+      { name: "美食" }, { name: "美团超市" }, { name: "生鲜果蔬" }, { name: "下午茶" }, { name: "美团专送" }, { name: "正餐优选" }, { name: "快餐小吃" }, { name: "全部商家" }
+    ],
+    menu2: [
+      { name: "汉堡披萨" }, { name: "地方菜" }, { name: "配送免费" }, { name: "新商家" }, { name: "炸鸡零食" }, { name: "日韩料理" }, { name: "鲜花蛋糕" }, { name: "送药上门" }
+    ],
+    indicatorDots: true,
+    autoplay: false,
+    interval: 5000,
+    duration: 1000
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
+  onLoad: function(){
+    console.log(111111111)
+    wx.getLocation({
+      type: 'wgs84',
+      success: function (res) {
+        console.log(res)
+        var latitude = res.latitude
+        var longitude = res.longitude
+        var speed = res.speed
+        var accuracy = res.accuracy
+      }
     })
-  },
-  onLoad: function () {
-    console.log('onLoad')
-    var that = this
-    //调用应用实例的方法获取全局数据
-    app.getUserInfo(function(userInfo){
-      //更新数据
-      console.log(userInfo)
-      that.setData({
-        userInfo:userInfo
-      })
-      //函数里要获取data中定义的变量时，用this.data.，注意this的指向
-      common.sayHello(that.data.userInfo.nickName)
-    })
-    
   }
 })

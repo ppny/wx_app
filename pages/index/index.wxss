@@ -19,3 +19,26 @@
 .usermotto {
   margin-top: 200px;
 }
+.container{
+  padding: 0;
+}
+.container ul{
+  width:100%;
+}
+swiper{
+  height: 210px;
+}
+.menu li{
+  width: 25%;
+  text-align: center;
+  display: inline-block;
+  font-size: 12px;
+}
+.menu image{
+  width: 50px;
+  height: 50px;
+  display: block;
+  border-radius: 100%;
+  background: pink;
+  margin: 10px auto;
+}
